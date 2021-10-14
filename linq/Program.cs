@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace linq
 {
@@ -6,7 +7,8 @@ namespace linq
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string json = File.ReadAllText("data.json");
+            Console.WriteLine($"{json}");
         }
     }
 }
