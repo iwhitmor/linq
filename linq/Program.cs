@@ -1,5 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace linq
 {
@@ -7,8 +10,31 @@ namespace linq
     {
         static void Main(string[] args)
         {
+            RootObject root = ReadJson();
+
+            IEnumerable<string> neighborhood = root.features.Select(Feature => Feature.properties.neighborhood);
+
+            int neighborhoodCount = neighborhood.Count();
+
+            Console.WriteLine($"{neighborhoodCount}");
+
+            IEnumerable<string> noNameNeighbor = neighborhood.Where(neighborhood =>
+                    neighborhood != "");
+
+            int noNeighborCount = noNameNeighbor.Count();
+
+            Console.WriteLine($"{noNeighborCount}");
+        }
+
+        private static RootObject ReadJson()
+        {
             string json = File.ReadAllText("data.json");
-            Console.WriteLine($"{json}");
+
+            //Proof of life that we can get the data.json from file
+            //Console.WriteLine($"{json}");
+
+            RootObject root = JsonConvert.DeserializeObject<RootObject>(json);
+            return root;
         }
     }
 }
