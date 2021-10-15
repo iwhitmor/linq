@@ -16,7 +16,7 @@ namespace linq
 
             int neighborhoodCount = neighborhood.Count();
 
-            Console.WriteLine($"{neighborhoodCount}");
+            Console.WriteLine($"{neighborhoodCount} neighborhoods.");
 
             Console.WriteLine();
 
@@ -25,7 +25,7 @@ namespace linq
 
             int noNeighborCount = noNameNeighbor.Count();
 
-            Console.WriteLine($"{noNeighborCount}");
+            Console.WriteLine($"{noNeighborCount} of those neighborhoods have a name.");
             Console.WriteLine();
 
 
@@ -33,7 +33,7 @@ namespace linq
 
             int zeroDuplicates = noDuplicates.Count();
 
-            Console.WriteLine($"{zeroDuplicates}");
+            Console.WriteLine($"Only {zeroDuplicates} neighborhoods are not duplicates.");
             Console.WriteLine();
 
         }
