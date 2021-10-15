@@ -16,8 +16,9 @@ namespace linq
 
             int neighborhoodCount = neighborhood.Count();
 
-            Console.WriteLine($"{neighborhoodCount} neighborhoods.");
-
+            Console.WriteLine("1. Output all of the Manhattan neighborhoods in the data list.");
+            Console.WriteLine();
+            Console.WriteLine($"--- {neighborhoodCount} neighborhoods.");
             Console.WriteLine();
 
             IEnumerable<string> noNameNeighbor = neighborhood.Where(neighborhood =>
@@ -25,7 +26,9 @@ namespace linq
 
             int noNeighborCount = noNameNeighbor.Count();
 
-            Console.WriteLine($"{noNeighborCount} of those neighborhoods have a name.");
+            Console.WriteLine("2. Filter out all the neighborhoods that do not have any names.");
+            Console.WriteLine();
+            Console.WriteLine($"--- {noNeighborCount} of the neighborhoods have a name.");
             Console.WriteLine();
 
 
@@ -33,7 +36,9 @@ namespace linq
 
             int zeroDuplicates = noDuplicates.Count();
 
-            Console.WriteLine($"Only {zeroDuplicates} neighborhoods are not duplicates.");
+            Console.WriteLine("3. Remove any duplicates from the list of neighborhoods.");
+            Console.WriteLine();
+            Console.WriteLine($"--- Only {zeroDuplicates} neighborhoods are not duplicates.");
             Console.WriteLine();
 
         }
