@@ -18,12 +18,15 @@ namespace linq
 
             Console.WriteLine($"{neighborhoodCount}");
 
+            Console.WriteLine();
+
             IEnumerable<string> noNameNeighbor = neighborhood.Where(neighborhood =>
                     neighborhood != "");
 
             int noNeighborCount = noNameNeighbor.Count();
 
             Console.WriteLine($"{noNeighborCount}");
+            Console.WriteLine();
 
 
             var noDuplicates = noNameNeighbor.Distinct();
@@ -31,6 +34,7 @@ namespace linq
             int zeroDuplicates = noDuplicates.Count();
 
             Console.WriteLine($"{zeroDuplicates}");
+            Console.WriteLine();
 
         }
 
