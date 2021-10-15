@@ -24,7 +24,21 @@ namespace linq
             int noNeighborCount = noNameNeighbor.Count();
 
             Console.WriteLine($"{noNeighborCount}");
+
+
+            var noDuplicates = noNameNeighbor.Distinct();
+
+            int zeroDuplicates = noDuplicates.Count();
+
+            Console.WriteLine($"{zeroDuplicates}");
+
         }
+
+
+
+
+
+
 
         private static RootObject ReadJson()
         {
