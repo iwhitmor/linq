@@ -38,7 +38,7 @@ namespace linq
 
             Console.WriteLine("3. Remove any duplicates from the list of neighborhoods.");
             Console.WriteLine();
-            Console.WriteLine($"--- Only {zeroDuplicates} neighborhoods are not duplicates.");
+            Console.WriteLine($"--- {zeroDuplicates} neighborhoods are not duplicates.");
             Console.WriteLine();
 
         }
