@@ -40,14 +40,7 @@ namespace linq
             Console.WriteLine();
             Console.WriteLine($"--- {zeroDuplicates} neighborhoods are not duplicates.");
             Console.WriteLine();
-
         }
-
-
-
-
-
-
 
         private static RootObject ReadJson()
         {
