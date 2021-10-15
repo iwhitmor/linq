@@ -29,7 +29,7 @@ namespace linq
             Console.WriteLine();
 
 
-            var noDuplicates = noNameNeighbor.Distinct();
+            IEnumerable<string> noDuplicates = noNameNeighbor.Distinct();
 
             int zeroDuplicates = noDuplicates.Count();
 
