@@ -12,7 +12,7 @@ namespace linq
         {
             RootObject root = ReadJson();
 
-            IEnumerable<string> neighborhood = root.features.Select(Feature => Feature.properties.neighborhood);
+            var neighborhood = root.features.Select(Feature => Feature.properties.neighborhood);
 
             int neighborhoodCount = neighborhood.Count();
 
@@ -21,7 +21,7 @@ namespace linq
             Console.WriteLine($"--- {neighborhoodCount} neighborhoods.");
             Console.WriteLine();
 
-            IEnumerable<string> noNameNeighbor = neighborhood.Where(neighborhood =>
+            var noNameNeighbor = neighborhood.Where(neighborhood =>
                     neighborhood != "");
 
             int noNeighborCount = noNameNeighbor.Count();
@@ -31,8 +31,7 @@ namespace linq
             Console.WriteLine($"--- {noNeighborCount} of the neighborhoods have a name.");
             Console.WriteLine();
 
-
-            IEnumerable<string> noDuplicates = noNameNeighbor.Distinct();
+            var noDuplicates = noNameNeighbor.Distinct();
 
             int zeroDuplicates = noDuplicates.Count();
 
@@ -40,6 +39,16 @@ namespace linq
             Console.WriteLine();
             Console.WriteLine($"--- {zeroDuplicates} neighborhoods are not duplicates.");
             Console.WriteLine();
+
+
+            var manhattan =
+                root.features
+                .Select(Feature => Feature.properties.neighborhood);
+                neighborhood.Where(neighborhood => neighborhood != "");
+                noNameNeighbor.Distinct();
+
+            Console.WriteLine($"All in one: {manhattan.Count()}");
+
         }
 
         private static RootObject ReadJson()
